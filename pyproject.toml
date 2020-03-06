@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "sphinx-plugins"
+version = "0.1.0"
+description = ""
+authors = ["Maxime Mouchet <max@maxmouchet.com>"]
+license = "MIT"
+packages = [
+    { include = "sphinx_md2html" },
+    { include = "sphinx_graphiql" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+docutils = "^0.16"
+sphinx = "^2.4.4"
+markdown = "^3.2.1"
+fett = "^0.3.2"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+pylint = "^2.4.4"
+isort = "^4.3.21"
+pre-commit = "^2.1.1"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

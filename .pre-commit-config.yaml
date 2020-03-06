@@ -1,0 +1,27 @@
+repos:
+- repo: https://github.com/timothycrosley/isort
+  rev: 4.3.21
+  hooks:
+  - id: isort
+    additional_dependencies: [toml]
+
+- repo: https://github.com/psf/black
+  rev: 19.10b0
+  hooks:
+    - id: black
+
+- repo: https://github.com/pre-commit/mirrors-pylint
+  rev: v2.4.4 # TODO: Update to v2.5.0 when available (for pyproject.toml)
+  hooks:
+    - id: pylint
+      # We disable import-error since this is run outside poetry venv
+      args: [--errors-only, --disable=E0401]
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v2.4.0
+  hooks:
+    - id: trailing-whitespace
+      exclude: ^tests/traces/.*
+    - id: end-of-file-fixer
+      exclude: ^tests/traces/.*
+    - id: check-yaml
