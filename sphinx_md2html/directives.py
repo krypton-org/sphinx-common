@@ -16,7 +16,7 @@ class MarkdownToHtml(Directive):
         html = markdown(md, extensions=["fenced_code"])
         # HACK: Replace /docs/ links with ""
         # TODO: Proper directive option
-        html = html.replace("/docs/", "")
+        # html = html.replace("/docs/", "")
         lines = statemachine.string2lines(html, 4, convert_whitespace=True)
         lines = ["    " + line for line in lines]
         lines.insert(0, ".. raw:: html")
